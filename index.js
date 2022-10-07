@@ -6,6 +6,7 @@ const filename = "./example/automobile-tailored.yml";
 
 const apiDetails = {
   title: "Automobile API",
+  description: "Automobile API",
   version: "1.0.0",
 };
 
@@ -34,6 +35,7 @@ function baseOpenAPI(apiDetails) {
     info: {
       title: apiDetails.title,
       version: apiDetails.version,
+      description: `${apiDetails.description} [generated from code]`,
     },
     paths: {},
     components: {
@@ -54,8 +56,11 @@ function buildSchemas(openapi, tailored) {
           type: propertyType,
         };
         return result;
-      }, {}
+      },
+      {}
     );
+
+    itemProperties["id"] = { type: "string" };
 
     openapi.components.schemas[itemSchemaName] = {
       type: "object",
@@ -95,7 +100,7 @@ function buildOperations(openapi, tailored) {
               "application/json": {
                 schema: {
                   $ref: `#/components/schemas/${resource.name}-collection`,
-                }
+                },
               },
             },
           },
@@ -125,7 +130,7 @@ function buildOperations(openapi, tailored) {
               "application/json": {
                 schema: {
                   $ref: `#/components/schemas/${resource.name}-item`,
-                }
+                },
               },
             },
           },
