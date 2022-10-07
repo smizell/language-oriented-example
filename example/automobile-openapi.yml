@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Automobile API
+paths:
+  /automobiles:
+    get:
+      operationId: list-automobiles
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Automobiles"
+  /automobiles/{id}:
+    get:
+      operationId: retreive-automobile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: {type: "string"}
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Automobile"
+components:
+  schemas:
+    Automobile:
+      type: object
+      properties:
+        id: {type: "string"}
+        make: {type: "string"}
+        model: {type: "string"}
+        year: {type: "string"}
+    Automobiles:
+      type: array
+      items:
+        $ref: "#/components/schemas/Automobile"

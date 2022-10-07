@@ -1,0 +1,9 @@
+resources:
+- name: automobile
+  operations:
+  - list
+  - retrieve
+  properties:
+    make: string
+    model: string
+    year: string
