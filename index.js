@@ -112,7 +112,7 @@ function buildOperations(openapi, tailored) {
       ensurePathItem(openapi, itemUrl);
 
       openapi.paths[itemUrl]["get"] = {
-        operationId: `retrieve-${pluralResourceName}`,
+        operationId: `retrieve-${resource.name}`,
         parameters: [
           {
             name: idParameterName,

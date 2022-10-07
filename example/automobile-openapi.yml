@@ -16,7 +16,7 @@ paths:
                 $ref: "#/components/schemas/automobile-collection"
   "/automobiles/{automobile_id}":
     get:
-      operationId: retrieve-automobiles
+      operationId: retrieve-automobile
       parameters:
         - name: automobile_id
           in: path
