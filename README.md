@@ -4,7 +4,7 @@ View the [tailored example](./example/automobile-tailored.yml) to see an API des
 
 ## What's happening here?
 
-This is an example of a language-oriented approach to API design. Instead of starting with a universal ADL like OpenAPI, an organization creates a tailored ADL and generates OpenAPI documents from it. In this example, the API is an automobile API, and it's design is captured in the tailored ADL. The format for this ADL is:
+This is an example of a language-oriented approach to API design. Instead of starting with a universal ADL like OpenAPI, an organization creates a tailored ADL and generates OpenAPI documents from it. In this example, the API is an automobile API, and it's design is captured in the tailored ADL. The format for the ADL in this example is:
 
 ```yaml
 resources:
